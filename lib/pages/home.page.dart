@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/pages/detalles.page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,17 +18,23 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          Expanded(
-            child: Container(
-              color: Colors.black,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/netflix-logo.png',
-                    width: 300,
-                  ),
-                ],
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => DetallesPage())));
+            },
+            child: Expanded(
+              child: Container(
+                color: Colors.black,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/netflix-logo.png',
+                      width: 300,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
