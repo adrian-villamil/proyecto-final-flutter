@@ -27,7 +27,7 @@ class _HboDetallesPageState extends State<HboDetallesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Videos"),
+        title: const Text("Top 10 HBO MAX"),
       ),
       body: FutureBuilder(
         future: videos,

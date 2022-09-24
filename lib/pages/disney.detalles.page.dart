@@ -27,7 +27,7 @@ class _DisneyDetallesPageState extends State<DisneyDetallesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Videos"),
+        title: const Text("Top 10 Disney Plus"),
       ),
       body: FutureBuilder(
         future: videos,

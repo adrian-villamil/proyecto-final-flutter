@@ -27,7 +27,7 @@ class _AmazonDetallesPageState extends State<AmazonDetallesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Videos"),
+        title: const Text("Top 10 Amazon Prime Video"),
       ),
       body: FutureBuilder(
         future: videos,

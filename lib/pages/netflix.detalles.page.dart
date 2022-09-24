@@ -27,7 +27,7 @@ class _NetflixDetallesPageState extends State<NetflixDetallesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Videos"),
+        title: const Text("Top 10 Netflix"),
       ),
       body: FutureBuilder(
         future: videos,
