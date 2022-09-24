@@ -33,10 +33,12 @@ class _DisneyDetallesPageState extends State<DisneyDetallesPage> {
         future: videos,
         builder: ((context, snapshot) {
           List<Widget> lista = [];
+          int c = 1;
 
           if (snapshot.hasData) {
             snapshot.data?.forEach((element) => lista.add(CardWidget(
                   video: element,
+                  contador: c++,
                 )));
             lista.add(Center(
               child: Link(

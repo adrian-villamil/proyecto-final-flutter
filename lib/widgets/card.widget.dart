@@ -5,9 +5,10 @@ import 'package:proyecto_final/models/video.model.dart';
 
 // ignore: must_be_immutable
 class CardWidget extends StatelessWidget {
-  CardWidget({super.key, required this.video});
+  CardWidget({super.key, required this.video, required this.contador});
 
   VideoModel video;
+  int contador;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class CardWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            video.title,
+            '$contador: ${video.title}',
             style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
