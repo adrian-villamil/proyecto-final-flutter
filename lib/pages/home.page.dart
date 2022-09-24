@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/pages/amazon.detalles.page.dart';
 import 'package:proyecto_final/pages/disney.detalles.page.dart';
 import 'package:proyecto_final/pages/netflix.detalles.page.dart';
 
@@ -44,16 +45,25 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Expanded(
-            child: Container(
-              color: Colors.white,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/amazonprimevideo-logo.png',
-                    width: 400,
-                  ),
-                ],
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AmazonDetallesPage(),
+                    ));
+              },
+              child: Container(
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/amazonprimevideo-logo.png',
+                      width: 400,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
