@@ -37,7 +37,8 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Image.asset(
                       'assets/netflix-logo.png',
-                      width: 300,
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      fit: BoxFit.contain,
                     ),
                   ],
                 ),
@@ -60,7 +61,8 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Image.asset(
                       'assets/amazonprimevideo-logo.png',
-                      width: 400,
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      fit: BoxFit.contain,
                     ),
                   ],
                 ),
@@ -83,7 +85,8 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Image.asset(
                       'assets/disneyplus-logo.png',
-                      width: 600,
+                      width: MediaQuery.of(context).size.width * 1,
+                      fit: BoxFit.contain,
                     ),
                   ],
                 ),
@@ -106,7 +109,8 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Image.asset(
                       'assets/hbomax-logo.png',
-                      width: 400,
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      fit: BoxFit.contain,
                     ),
                   ],
                 ),
