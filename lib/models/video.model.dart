@@ -10,7 +10,7 @@ class VideoModel {
   });
 
   factory VideoModel.fromJson(Map<String, dynamic> json) => VideoModel(
-        id: json["id"] ?? '',
+        id: json["snippet"]["resourceId"]["videoId"] ?? '',
         title: json["snippet"]["title"] ?? '',
         thumbnail: json["snippet"]["thumbnails"]["high"]["url"] ?? '',
       );

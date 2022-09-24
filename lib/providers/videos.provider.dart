@@ -4,13 +4,13 @@ import 'package:http/http.dart' as http;
 import '../models/video.model.dart';
 
 class VideoProvider {
-  Future<List<VideoModel>> obtenerVideos() async {
+  Future<List<VideoModel>> obtenerVideos(String playlistId) async {
     List<VideoModel> videos = [];
     var client = http.Client();
 
     try {
       Map<String, String> parametros = {
-        'playlistId': 'PL7bptl9TAMiwi81O-9TG9IQOZ5mi2vxjQ',
+        'playlistId': playlistId,
         'part': 'snippet',
         'maxResults': '50',
       };

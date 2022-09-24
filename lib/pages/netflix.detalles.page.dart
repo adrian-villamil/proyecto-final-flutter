@@ -1,23 +1,22 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/models/video.model.dart';
 import 'package:proyecto_final/providers/videos.provider.dart';
 import 'package:proyecto_final/widgets/card.widget.dart';
 
-class DetallesPage extends StatefulWidget {
-  const DetallesPage({super.key});
+class NetflixDetallesPage extends StatefulWidget {
+  const NetflixDetallesPage({super.key});
 
   @override
-  State<DetallesPage> createState() => _DetallesPageState();
+  State<NetflixDetallesPage> createState() => _NetflixDetallesPageState();
 }
 
-class _DetallesPageState extends State<DetallesPage> {
+class _NetflixDetallesPageState extends State<NetflixDetallesPage> {
   final videoProvider = VideoProvider();
   late Future<List<VideoModel>> videos;
 
   @override
   void initState() {
-    videos = videoProvider.obtenerVideos();
+    videos = videoProvider.obtenerVideos('PL7bptl9TAMiwi81O-9TG9IQOZ5mi2vxjQ');
     super.initState();
   }
 
@@ -25,7 +24,7 @@ class _DetallesPageState extends State<DetallesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Videos"),
+        title: const Text("Videos"),
       ),
       body: FutureBuilder(
         future: videos,
@@ -33,14 +32,14 @@ class _DetallesPageState extends State<DetallesPage> {
           List<Widget> lista = [];
 
           if (snapshot.hasData) {
-            snapshot.data?.forEach(((element) => lista.add(CardWidget(
+            snapshot.data?.forEach((element) => lista.add(CardWidget(
                   video: element,
-                ))));
+                )));
             return ListView(
               children: lista,
             );
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         }),
       ),

@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+import 'package:fwfh_webview/fwfh_webview.dart';
 import 'package:proyecto_final/models/video.model.dart';
 
+// ignore: must_be_immutable
 class CardWidget extends StatelessWidget {
   CardWidget({super.key, required this.video});
 
@@ -11,14 +13,22 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        color: Colors.blueGrey,
-        height: 400,
-        child: Column(children: [
-          Text(video.title),
-          Image.network(video.thumbnail),
-        ]),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            video.title,
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          HtmlWidget(
+            '<iframe style="width:700px;" src="https://www.youtube.com/embed/${video.id}"></iframe>',
+            factoryBuilder: () => MyWidgetFactory(),
+          )
+        ],
       ),
     );
   }
 }
+
+class MyWidgetFactory extends WidgetFactory with WebViewFactory {}

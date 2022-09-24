@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:proyecto_final/pages/detalles.page.dart';
+import 'package:proyecto_final/pages/disney.detalles.page.dart';
+import 'package:proyecto_final/pages/netflix.detalles.page.dart';
+
+import 'hbo.detalles.page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,16 +16,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ENTRETENIMIENTO HD'),
+        title: const Text('ENTRETENIMIENTO HD'),
       ),
       body: Column(
         children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => DetallesPage())));
-            },
-            child: Expanded(
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NetflixDetallesPage(),
+                    ));
+              },
               child: Container(
                 color: Colors.black,
                 child: Row(
@@ -53,30 +58,48 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Expanded(
-            child: Container(
-              color: Color.fromRGBO(17, 60, 207, 1),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/disneyplus-logo.png',
-                    width: 600,
-                  ),
-                ],
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DisneyDetallesPage(),
+                    ));
+              },
+              child: Container(
+                color: const Color.fromRGBO(17, 60, 207, 1),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/disneyplus-logo.png',
+                      width: 600,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
           Expanded(
-            child: Container(
-              color: Colors.white,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/hbomax-logo.png',
-                    width: 400,
-                  ),
-                ],
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HboDetallesPage(),
+                    ));
+              },
+              child: Container(
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/hbomax-logo.png',
+                      width: 400,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
