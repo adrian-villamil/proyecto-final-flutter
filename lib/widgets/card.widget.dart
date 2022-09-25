@@ -23,7 +23,7 @@ class CardWidget extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           HtmlWidget(
-            '<iframe style="width:700px;" src="https://www.youtube.com/embed/${video.id}"></iframe>',
+            '<iframe style="width:${MediaQuery.of(context).size.width}%;" src="https://www.youtube.com/embed/${video.id}"></iframe>',
             factoryBuilder: () => MyWidgetFactory(),
           )
         ],
